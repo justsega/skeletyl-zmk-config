@@ -87,55 +87,9 @@
             bindings = <&to RESET>;
         };
 
-        combo_reset_central {
-            key-positions = <32 33>;
-            bindings = <&bootloader>;
-            require-prior-idle-ms = <2000>;
-        };
-
-        combo_normal {
-            key-positions = <7 8>;
-            bindings = <&to DEF>;
-        };
-
-        combo_fn {
-            key-positions = <27 28>;
-            bindings = <&sl FUNCTION>;
-        };
-
-        combo_game {
-            key-positions = <5 9>;
-            bindings = <&to GAME>;
-        };
-
-        combo_esc {
-            key-positions = <1 2>;
-            bindings = <&kp ESCAPE>;
-        };
-
-        combo_tab {
-            key-positions = <2 3>;
-            bindings = <&kp TAB>;
-        };
-
-        combo_cdel {
-            key-positions = <11 12>;
-            bindings = <&kp LC(BACKSPACE)>;
-        };
-
         combo_unlock {
             key-positions = <0 4>;
             bindings = <&studio_unlock>;
-        };
-
-        combo_term1 {
-            key-positions = <20 21>;
-            bindings = <&kp LG(BSLH)>;
-        };
-
-        combo_term2 {
-            key-positions = <28 29>;
-            bindings = <&kp LG(GRAVE)>;
         };
     };
 
