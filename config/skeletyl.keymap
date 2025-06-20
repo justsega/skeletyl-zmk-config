@@ -79,12 +79,12 @@
 
         combo_reset_layer_left {
             key-positions = <20 24>;
-            bindings = <&to RESET>;
+            bindings = <&to 4>;
         };
 
         combo_reset_layer_right {
             key-positions = <25 29>;
-            bindings = <&to RESET>;
+            bindings = <&to 4>;
         };
 
         combo_unlock {
@@ -93,24 +93,33 @@
         };
     };
 
+    macros {
+        arrow: arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp EQUAL &kp GT>;
+            label = "ARROW";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         base_layer {
             bindings = <
-&kp Q                &kp W              &kp E            &kp R      &kp T    &kp Y  &kp U           &kp I             &kp O               &kp P
-&hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &kp F      &kp G    &kp H  &kp J           &hmr RIGHT_ALT K  &hmr RIGHT_SHIFT L  &hmr RIGHT_CONTROL SEMICOLON
-&kp Z                &kp X              &kp C            &kp V      &kp B    &kp N  &kp M           &kp COMMA         &kp DOT             &kp FSLH
-                                        &kp LC(SPACE)    &kp SPACE  &mo RSE  &sl 1  &kp LEFT_SHIFT  &mo 3
+&kp Q                &kp W              &kp E            &kp R      &kp T  &kp Y  &kp U           &kp I             &kp O               &kp P
+&hml LEFT_CONTROL A  &hml LEFT_SHIFT S  &hml LEFT_ALT D  &kp F      &kp G  &kp H  &kp J           &hmr RIGHT_ALT K  &hmr RIGHT_SHIFT L  &hmr RIGHT_CONTROL SEMICOLON
+&kp Z                &kp X              &kp C            &kp V      &kp B  &kp N  &kp M           &kp COMMA         &kp DOT             &kp FSLH
+                                        &kp LC(SPACE)    &kp SPACE  &mo 2  &sl 1  &kp LEFT_SHIFT  &mo 3
             >;
         };
 
         symbol_layer {
             bindings = <
-&kp EXCLAMATION  &kp AT_SIGN  &kp HASH       &kp DOLLAR         &kp PERCENT     &kp CARET  &kp QUESTION     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp TILDE        &kp GRAVE    &kp SQT        &kp DOUBLE_QUOTES  &kp MINUS       &kp PLUS   &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT         &kp RIGHT_GUI
-&kp BACKSLASH    &kp PIPE     &kp SEMICOLON  &kp COMMA          &kp UNDERSCORE  &kp EQUAL  &kp DOT          &kp COLON          &kp PIPE              &kp SLASH
-                              &none          &none              &none           &none      &none            &none
+&kp EXCLAMATION  &kp AT_SIGN   &kp HASH       &kp DOLLAR    &kp PERCENT  &kp CARET     &kp QUESTION  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4  &kp N5       &kp NUMBER_6  &kp N7        &kp N8        &kp N9                &kp N0
+&kp BACKSLASH    &kp PIPE      &kp SEMICOLON  &kp UNDER     &kp MINUS    &kp PLUS      &kp EQUAL     &arrow        &kp LEFT_BRACE        &kp RIGHT_BRACE
+                               &none          &none         &none        &none         &none         &none
             >;
         };
 
@@ -119,7 +128,7 @@
 &kp LA(TAB)             &kp LC(TAB)        &kp LS(LG(N5))    &kp PAGE_DOWN    &kp ESCAPE  &kp ESCAPE  &kp HOME   &kp END       &kp BACKSPACE  &kp DEL
 &kp LEFT_GUI            &kp LEFT_ALT       &kp LEFT_CONTROL  &kp LEFT_SHIFT   &kp ENTER   &kp LEFT    &kp DOWN   &kp UP_ARROW  &kp RIGHT      &kp SQT
 &kp LC(LS(LEFT_ARROW))  &kp LC(LS(RIGHT))  &none             &kp PRINTSCREEN  &kp TAB     &kp TAB     &kp ENTER  &none         &none          &none
-                                           &none             &none            &trans      &mo 4       &trans     &trans
+                                           &none             &none            &trans      &none       &trans     &trans
             >;
         };
 
@@ -129,15 +138,6 @@
 &trans    &kp F6   &kp F7  &kp F8  &kp F9           &kp F10  &none   &kp LCTRL  &kp LSHFT                     &kp LALT
 &kp LGUI  &trans   &kp F1  &kp F2  &kp F3           &kp F4   &kp F5  &none      &none                         &none
                    &none   &none   &trans           &none    &none   &none
-            >;
-        };
-
-        num {
-            bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &kp NUMBER_6  &kp N7  &kp N8  &kp NUMBER_9  &kp NUMBER_0
-&kp LCTRL     &kp A         &kp S         &kp D         &kp F   &none         &none   &none   &none         &none
-&kp LSHIFT    &kp Z         &kp X         &kp C         &kp V   &kp N1        &kp N2  &kp N3  &kp N4        &kp N5
-                            &none         &none         &none   &none         &none   &none
             >;
         };
 
