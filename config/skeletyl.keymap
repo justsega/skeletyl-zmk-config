@@ -125,10 +125,10 @@
 
         nav_layer {
             bindings = <
-&kp LA(TAB)             &kp LC(TAB)        &kp LS(LG(N5))    &kp PAGE_DOWN    &kp ESCAPE  &kp ESCAPE  &kp HOME   &kp END       &kp BACKSPACE  &kp DEL
-&kp LEFT_GUI            &kp LEFT_ALT       &kp LEFT_CONTROL  &kp LEFT_SHIFT   &kp ENTER   &kp LEFT    &kp DOWN   &kp UP_ARROW  &kp RIGHT      &kp SQT
-&kp LC(LS(LEFT_ARROW))  &kp LC(LS(RIGHT))  &none             &kp PRINTSCREEN  &kp TAB     &kp TAB     &kp ENTER  &none         &none          &none
-                                           &none             &none            &trans      &none       &trans     &trans
+&kp LA(TAB)             &kp LC(TAB)        &kp LS(LG(N5))  &kp PAGE_DOWN    &kp ESCAPE  &kp ESCAPE  &kp HOME   &kp END       &kp BACKSPACE  &kp DEL
+&sk LEFT_CONTROL        &sk LEFT_SHIFT     &sk LEFT_ALT    &kp LEFT_GUI     &kp ENTER   &kp LEFT    &kp DOWN   &kp UP_ARROW  &kp RIGHT      &kp SQT
+&kp LC(LS(LEFT_ARROW))  &kp LC(LS(RIGHT))  &none           &kp PRINTSCREEN  &kp TAB     &kp TAB     &kp ENTER  &none         &none          &none
+                                           &none           &none            &trans      &none       &trans     &trans
             >;
         };
 
