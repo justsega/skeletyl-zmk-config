@@ -97,8 +97,36 @@
         arrow: arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp EQUAL &kp GT>;
+            bindings = <&kp EQUAL &kp GT>;
             label = "ARROW";
+        };
+
+        left_workspace: left_workspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT_ALT &kp LEFT>;
+            label = "LEFT_WORKSPACE";
+        };
+
+        right_workspace: right_workspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT_ALT &kp RIGHT>;
+            label = "RIGHT_WORKSPACE";
+        };
+
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp TAB>;
+            label = "ALT_TAB";
+        };
+
+        control_tab: control_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp TAB>;
+            label = "CONTROL_TAB";
         };
     };
 
@@ -125,10 +153,10 @@
 
         nav_layer {
             bindings = <
-&kp LA(TAB)             &kp LC(TAB)        &kp LS(LG(N5))  &kp PAGE_DOWN    &kp ESCAPE  &kp ESCAPE  &kp HOME   &kp END       &kp BACKSPACE  &kp DEL
-&sk LEFT_CONTROL        &sk LEFT_SHIFT     &sk LEFT_ALT    &kp LEFT_GUI     &kp ENTER   &kp LEFT    &kp DOWN   &kp UP_ARROW  &kp RIGHT      &kp SQT
-&kp LC(LS(LEFT_ARROW))  &kp LC(LS(RIGHT))  &none           &kp PRINTSCREEN  &kp TAB     &kp TAB     &kp ENTER  &none         &none          &none
-                                           &none           &none            &trans      &none       &trans     &trans
+&alt_tab          &control_tab      &kp LS(LG(N5))  &kp PAGE_DOWN    &kp ESCAPE  &kp ESCAPE  &kp HOME   &kp END       &kp BACKSPACE  &kp DEL
+&sk LEFT_CONTROL  &sk LEFT_SHIFT    &sk LEFT_ALT    &kp LEFT_GUI     &kp ENTER   &kp LEFT    &kp DOWN   &kp UP_ARROW  &kp RIGHT      &kp SQT
+&left_workspace   &right_workspace  &none           &kp PRINTSCREEN  &kp TAB     &kp TAB     &kp ENTER  &none         &none          &none
+                                    &none           &none            &trans      &none       &trans     &trans
             >;
         };
 
